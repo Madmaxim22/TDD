@@ -40,4 +40,11 @@ public class PhoneBookTest {
         String name = phoneBook.findByNumber("89267095433");
         assertEquals("Максим", name);
     }
+
+    @Test
+    public void testFindByName() {
+        phoneBook.add("Максим", "89267095433");
+        String number = phoneBook.findByName("Максим");
+        assertEquals("89267095433", number);
+    }
 }
