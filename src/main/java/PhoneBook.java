@@ -1,5 +1,7 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class PhoneBook {
 
@@ -17,7 +19,11 @@ public class PhoneBook {
     }
 
     String findByNumber(String number) {
-
+        for (Map.Entry entry : mapPhone.entrySet()) {
+            if (number.equalsIgnoreCase((String)entry.getValue())){
+                return (String) entry.getKey();
+            }
+        }
         return null;
     }
 }
