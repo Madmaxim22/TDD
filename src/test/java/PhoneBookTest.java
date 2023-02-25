@@ -17,14 +17,14 @@ public class PhoneBookTest {
     @Test
     public void testAdd() {
         phoneBook.add("Максим", "89267095433");
-        assertTrue(phoneBook.mapPhone.containsKey("имя"));
-        assertTrue(phoneBook.mapPhone.containsValue("номер"));
+        assertTrue(phoneBook.mapPhone.containsKey("Максим"));
+        assertTrue(phoneBook.mapPhone.containsValue("89267095433"));
     }
 
     @Test
     public void testAddReturnSize() {
         int size = phoneBook.add("Максим", "89267095433");
-        assertEquals(0, size);
+        assertEquals(1, size);
     }
 
     @Test
