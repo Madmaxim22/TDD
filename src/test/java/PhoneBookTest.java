@@ -33,4 +33,11 @@ public class PhoneBookTest {
         phoneBook.add("Максим", "89992341565");
         assertTrue(phoneBook.mapPhone.containsValue("89267095433"));
     }
+
+    @Test
+    public void testFindByNumber() {
+        phoneBook.add("Максим", "89267095433");
+        String name = phoneBook.findByNumber("89267095433");
+        assertEquals("Максим", name);
+    }
 }
