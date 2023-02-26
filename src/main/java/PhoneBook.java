@@ -1,33 +1,26 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class PhoneBook {
 
-    Map<String, String> mapPhone = new HashMap<>();
-
-    public Map<String, String> getPhoneBook() {
-        return mapPhone;
-    }
+    Map<String, String> mapName = new TreeMap<>();
+    Map<String, String> mapNumber = new HashMap<>();
 
     int add(String name, String number) {
-        if(!mapPhone.containsKey(name)) {
-            mapPhone.put(name, number);
+        if(!mapName.containsKey(name) && !mapNumber.containsKey(number)) {
+            mapName.put(name, number);
+            mapNumber.put(number, name);
         }
-        return mapPhone.size();
+        return mapName.size();
     }
 
     String findByNumber(String number) {
-        for (Map.Entry entry : mapPhone.entrySet()) {
-            if (number.equalsIgnoreCase((String)entry.getValue())){
-                return (String) entry.getKey();
-            }
-        }
-        return null;
+        return mapNumber.get(number);
     }
 
     String findByName(String name) {
-        return mapPhone.get(name);
+        return mapName.get(name);
+    }
+
+    void printAllNames() {
     }
 }
