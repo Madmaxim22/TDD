@@ -10,9 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PhoneBookTest {
 
-    PhoneBook phoneBook;
     private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+    private PhoneBook phoneBook;
+
     @BeforeEach
     public void newPhoneBook() {
         phoneBook = new PhoneBook();
@@ -23,6 +24,7 @@ public class PhoneBookTest {
     public void tearDown() {
         System.setOut(standardOut);
     }
+
     @Test
     public void testAdd() {
         phoneBook.add("Максим", "89267095433");

@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class PhoneBook {
 
@@ -6,7 +8,7 @@ public class PhoneBook {
     Map<String, String> mapNumber = new HashMap<>();
 
     int add(String name, String number) {
-        if(!mapName.containsKey(name) && !mapNumber.containsKey(number)) {
+        if (!mapName.containsKey(name) && !mapNumber.containsKey(number)) {
             mapName.put(name, number);
             mapNumber.put(number, name);
         }
