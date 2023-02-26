@@ -22,5 +22,6 @@ public class PhoneBook {
     }
 
     void printAllNames() {
+        mapName.keySet().stream().forEach(System.out::println);
     }
 }
